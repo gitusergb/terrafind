@@ -392,3 +392,93 @@ h2 {
   margin: 0;
   overflow-wrap: anywhere;
 }
+
+
+
+
+
+/* Search status messages */
+#empty-state {
+  text-align: center;
+  padding: 28px 16px;
+  color: var(--text-color, #254638);
+}
+
+#empty-state[hidden] {
+  display: none;
+}
+
+#empty-state[data-state="loading"]::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 12px;
+  border: 3px solid #d8e4d8;
+  border-top-color: #276749;
+  border-radius: 50%;
+  animation: terrafind-spin 0.8s linear infinite;
+}
+
+#empty-state[data-state="error"] {
+  color: #a33b32;
+}
+
+#empty-state[data-state="empty"] {
+  color: var(--text-color, #254638);
+}
+
+#search-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.image-card {
+  animation: terrafind-appear 0.35s ease both;
+}
+
+.image-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.image-card__caption {
+  overflow-wrap: anywhere;
+}
+
+@keyframes terrafind-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes terrafind-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  #results {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .image-card__caption {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #empty-state[data-state="loading"]::before,
+  .image-card {
+    animation: none;
+  }
+}
