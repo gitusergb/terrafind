@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover inspiring images of nature, cities, wildlife, and architecture with TerraFind.">
+  <title>TerraFind — Discover Your World</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#" aria-label="TerraFind home">
+      <span class="brand-mark" aria-hidden="true">T</span>
+      <span>TerraFind</span>
+    </a>
+    <span class="header-note">A world worth discovering.</span>
+  </header>
+
+  <main class="main-content">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR NEXT DISCOVERY STARTS HERE</p>
+      <h1 id="page-title">Find a little <span>wonder.</span></h1>
+      <p class="hero-description">
+        Explore visual inspiration from the natural world and beyond.
+      </p>
+
+      <form class="search-form" id="search-form">
+        <label class="visually-hidden" for="search-input">
+          Search for images
+        </label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input
+          type="search"
+          id="search-input"
+          name="query"
+          placeholder="Try forests, mountains, or cities..."
+          autocomplete="off"
+        >
+        <button type="button" class="clear-button" id="clear-button">
+          Clear
+        </button>
+        <button type="submit" class="search-button" id="search-button">
+          Search <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <div class="quick-picks">
+        <span class="quick-picks-label">GET INSPIRED</span>
+        <button class="chip" type="button" data-query="Nature">Nature</button>
+        <button class="chip" type="button" data-query="Cities">Cities</button>
+        <button class="chip" type="button" data-query="Animals">Animals</button>
+        <button class="chip" type="button" data-query="Architecture">Architecture</button>
+      </div>
+    </section>
+
+    <section class="results-section" aria-labelledby="results-heading">
+      <div class="results-heading-row">
+        <div>
+          <p class="eyebrow">YOUR VISUAL EXPLORER</p>
+          <h2 id="results-heading">Discover something new</h2>
+        </div>
+        <p id="result-count" class="result-count">Ready to explore</p>
+      </div>
+
+      <div class="empty-state" id="empty-state">
+        <div class="empty-illustration" aria-hidden="true">✳</div>
+        <h3>Every discovery starts somewhere.</h3>
+        <p>Search for something you love to begin your journey.</p>
+      </div>
+
+      <div
+        class="results-grid"
+        id="results"
+        aria-live="polite"
+        aria-label="Image search results"
+      ></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>TerraFind <span aria-hidden="true">·</span> Made for curious minds.</p>
+  </footer>
+</body>
+</html>
+
