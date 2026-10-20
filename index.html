@@ -45,6 +45,11 @@
           Search <span aria-hidden="true">→</span>
         </button>
       </form>
+      
+
+
+
+
 
       <div class="quick-picks">
         <span class="quick-picks-label">GET INSPIRED</span>
@@ -61,7 +66,7 @@
           <p class="eyebrow">YOUR VISUAL EXPLORER</p>
           <h2 id="results-heading">Discover something new</h2>
         </div>
-        <p id="result-count" class="result-count">Ready to explore</p>
+        <p id="result-count" class="result-count" aria-live="polite">Ready to explore</p>
       </div>
 
       <div class="empty-state" id="empty-state">
@@ -72,10 +77,11 @@
 
       <div
         class="results-grid"
-        id="results"
+        id="results-grid"
         aria-live="polite"
         aria-label="Image search results"
       ></div>
+      <div ></div>
     </section>
   </main>
 

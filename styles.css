@@ -362,3 +362,33 @@ h2 {
     padding: 40px 16px;
   }
 }
+#results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.image-card {
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--card-bg, #ffffff);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.image-card a {
+  display: block;
+}
+
+.image-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.image-card p {
+  padding: 12px;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
